@@ -33,12 +33,6 @@ A modern, feature-rich Todo application built with Django that helps you manage 
 - **Frontend**: HTML, CSS
 - **Database**: SQLite
 - **Package Management**: Poetry
-- **Additional Libraries**:
-  - django-crispy-forms
-  - crispy-bootstrap5
-  - python-dotenv
-  - whitenoise
-  - logbook
 
 ## Installation
 
