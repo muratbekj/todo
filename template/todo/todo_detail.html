@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="detail-container">
+    <form method="POST" action="{% url 'todo_delete' todo.id %}" class="detail-form">
+        {% csrf_token %}
+        <div class="detail-header">
+            <h1 class="detail-title">{{ todo.title }}</h1>
+            <div class="detail-checkbox">
+                <label for="delete-todo">Mark as completed and delete:</label>
+                <input type="checkbox" id="delete-todo" name="delete" onchange="this.form.submit()" class="checkbox-input">
+            </div>
+        </div>
+        <div class="detail-content">
+            <div class="detail-field">
+                <span class="field-label">Description:</span>
+                <p class="field-value">{{ todo.description }}</p>
+            </div>
+            <div class="detail-field">
+                <span class="field-label">Category:</span>
+                <p class="field-value">{{ todo.category.name }}</p>
+            </div>
+            <div class="detail-field">
+                <span class="field-label">Priority:</span>
+                <p class="field-value">{{ todo.priority.name }}</p>
+            </div>        
+            <div class="detail-field">
+                <span class="field-label">Created Date:</span>
+                <p class="field-value">{{ todo.created_date }}</p>
+            </div>
+            <div class="detail-field">
+                <span class="field-label">Due Date:</span>
+                <p class="field-value">{{ todo.due_date }}</p>
+            </div>
+        </div>
+        <div class="detail-actions">
+            <a href="{% url 'todo_update' todo.pk %}" class="action-button update">Update</a>
+            <a href="{% url 'todo_delete' todo.pk %}" class="action-button delete">Delete</a>
+            <a href="{% url 'todo_list' %}" class="action-button back">Back to List</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

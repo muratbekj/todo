@@ -1,0 +1,25 @@
+[project]
+name = "todo-application"
+version = "1.0.0"
+description = "To do application with CRUD operations and email notifications"
+authors = [
+    {name = "MuratbekJ",email = "muratbekj2006@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10,<4.0"
+dependencies = [
+    "django>=5.0.2",
+    "python-dotenv>=1.0.1",
+    "django-crispy-forms>=2.1",
+    "crispy-bootstrap5>=2024.2",
+    "whitenoise>=6.6.0",
+    "gunicorn>=21.2.0",
+    "logbook (>=1.8.1,<2.0.0)",
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
